@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>the title</title>
+   <script type="text/javascript" 
+   src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script type="text/javascript" language="javascript">
+   $(document).ready(function() {
+      $("#driver").click(function(event){
+          var name = $("#Username").val();
+          var pass = $("#Pass").val();
+          var email = $("#email").val();
+          $("#UserName").load('ResponseBackFromServer.php', {"name":name,"pass":pass,"email":email} );
+      });
+   });
+   </script>
+</head>
+<body>
+    <h5>Enter your Detail </h5>
+    <input type="text"      id="Username"    name="userName" /><br /><div id="UserName"></div>
+    <input type="password"  id="Pass" name="pass" /><br /><div id="pass"></div>
+    <input type="email"     id="email" name="email"  /><br /><div id="email"></div>
+    <input type="button"    id="driver" value="Show Result" />
+</body>
+</html>
